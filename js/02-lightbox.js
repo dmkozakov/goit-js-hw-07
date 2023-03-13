@@ -10,7 +10,6 @@ const refs = {
 };
 
 refs.galleryBox.innerHTML = galleryMarkup;
-refs.galleryBox.addEventListener("click", onGalleryItemClick);
 
 var lightbox = new SimpleLightbox(".gallery a", {
   captionsPosition: "bottom",
@@ -29,8 +28,4 @@ function createGalleryItemMarkup({ preview, original, description }) {
 
 function createGalleryMarkup(item) {
   return item.map(el => createGalleryItemMarkup(el)).join("");
-}
-
-function onGalleryItemClick(e) {
-  e.preventDefault();
 }
