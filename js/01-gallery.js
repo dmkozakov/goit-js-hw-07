@@ -34,6 +34,10 @@ function createGalleryMarkup(items) {
 function onGalleryItemClick(evt) {
   evt.preventDefault();
 
+  if (evt.target.nodeName !== "IMG") {
+    return;
+  }
+
   const instance = basicLightbox.create(
     `<img src="${evt.target.dataset.source}" alt="${evt.target.alt}"/>`,
     {
